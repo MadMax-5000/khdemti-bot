@@ -29,8 +29,8 @@ export function ChatbotEmbed() {
   }, []);
 
   return (
-    <div className="mx-auto max-w-2xl px-0 sm:px-4">
-      <div className="h-[450px] overflow-hidden rounded-xl border border-white/8 bg-[#111] sm:h-[550px] lg:h-[600px]">
+    <div className="mx-auto max-w-lg px-2 sm:max-w-2xl sm:px-0">
+      <div className="h-[400px] overflow-hidden rounded-xl border border-white/8 bg-[#111] sm:h-[500px] md:h-[550px] lg:h-[600px]">
         <div id="bp-webchat" className="h-full w-full" />
       </div>
     </div>
