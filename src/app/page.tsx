@@ -39,18 +39,18 @@ export default function Home() {
           <div className="relative z-10 mx-auto max-w-4xl text-center">
             <Badge
               variant="outline"
-              className="mb-8 border-indigo-500/50 text-indigo-400"
+              className="mb-10 border-indigo-500/50 text-indigo-400 font-normal"
             >
               ✦ Projet IA · FST Mohammedia · 2025–2026
             </Badge>
 
-            <h1 className="mb-6 text-5xl font-bold tracking-tight text-white sm:text-6xl md:text-7xl">
+            <h1 className="mb-8 text-5xl font-bold tracking-tight text-white md:text-6xl lg:text-7xl leading-[1.1]">
               Prépare ton entretien
               <br />
               d&rsquo;embauche avec l&rsquo;<span className="text-indigo-500">IA</span>
             </h1>
 
-            <p className="mx-auto mb-10 max-w-xl text-lg text-zinc-400">
+            <p className="mx-auto mb-12 max-w-2xl text-lg text-zinc-400 leading-relaxed">
               KHDEMTI simule un vrai recruteur marocain, évalue tes réponses en
               temps réel et t&rsquo;envoie un plan d&rsquo;amélioration personnalisé
               sur 7 jours.
@@ -77,33 +77,28 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Logos / Social Proof Bar */}
+        {/* Social Proof Bar */}
         <section className={`${SECTION_PADDING} border-y ${BORDER}`}>
           <div className="mx-auto max-w-6xl px-6 text-center">
-            <p className="mb-8 text-xs font-medium uppercase tracking-widest text-zinc-500">
+            <p className="mb-12 text-xs font-medium uppercase tracking-widest text-zinc-500">
               Conçu pour les étudiants de
             </p>
-            <div className="grid grid-cols-2 gap-6 md:grid-cols-5">
+            <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
               {[
-                { abbr: "FST", name: "Faculté des Sciences et Techniques" },
-                { abbr: "ENSA", name: "École Nationale des Sciences Appliquées" },
-                { abbr: "ENSAM", name: "École Nationale Supérieure d'Arts et Métiers" },
-                { abbr: "ENCG", name: "École Nationale de Commerce et de Gestion" },
-                { abbr: "FSJES", name: "Faculté des Sciences Juridiques, Économiques et Sociales" },
+                { abbr: "FST Mohammedia", full: "Faculté des Sciences et Techniques" },
+                { abbr: "ENCG", full: "École Nationale de Commerce et de Gestion" },
+                { abbr: "ENSA", full: "École Nationale des Sciences Appliquées" },
+                { abbr: "FSJES", full: "Faculté des Sciences Juridiques, Économiques et Sociales" },
               ].map((school) => (
                 <div
                   key={school.abbr}
-                  className="group flex flex-col items-center gap-2"
-                  title={school.name}
+                  className="group relative"
+                  title={school.full}
                 >
-                  <div className="flex h-14 w-14 items-center justify-center rounded-xl border border-white/8 bg-white/5 transition-colors group-hover:border-indigo-500/30 group-hover:bg-indigo-500/10">
-                    <span className="text-lg font-bold text-zinc-300">
-                      {school.abbr.slice(0, 2)}
-                    </span>
-                  </div>
-                  <span className="text-xs font-medium text-zinc-400">
+                  <span className="text-xl font-semibold text-zinc-300 transition-colors group-hover:text-white">
                     {school.abbr}
                   </span>
+                  <span className="absolute -bottom-1 left-0 h-px w-0 bg-indigo-500 transition-all duration-300 group-hover:w-full" />
                 </div>
               ))}
             </div>
@@ -113,10 +108,10 @@ export default function Home() {
         {/* How It Works */}
         <section id="how" className={`${SECTION_PADDING} ${BORDER}`}>
           <div className="mx-auto max-w-6xl px-6">
-            <p className="mb-4 text-xs font-medium uppercase tracking-widest text-indigo-500">
+            <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-indigo-500">
               FONCTIONNEMENT
             </p>
-            <h2 className="mb-16 text-4xl font-bold tracking-tight text-white md:text-5xl">
+            <h2 className="mb-16 text-5xl font-bold tracking-tight text-white md:text-6xl leading-tight">
               Trois étapes. Cinq minutes.
             </h2>
 
@@ -178,97 +173,97 @@ export default function Home() {
         {/* Features Grid */}
         <section id="features" className={`${SECTION_PADDING} border-t ${BORDER}`}>
           <div className="mx-auto max-w-6xl px-6">
-            <p className="mb-4 text-xs font-medium uppercase tracking-widest text-indigo-500">
+            <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-indigo-500">
               POURQUOI KHDEMTI
             </p>
-            <h2 className="mb-16 text-4xl font-bold tracking-tight text-white md:text-5xl">
+            <h2 className="mb-16 text-4xl font-bold tracking-tight text-white md:text-5xl leading-tight">
               Tout ce dont tu as besoin pour décrocher ton premier poste
             </h2>
 
             <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
-              <div className="flex gap-4">
+              <div className="flex gap-5">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-indigo-500/10">
-                  <BrainCircuit className="h-6 w-6 text-indigo-500" />
+                  <BrainCircuit className="h-5 w-5 text-indigo-400" />
                 </div>
                 <div>
-                  <h3 className="mb-2 text-lg font-semibold text-white">
+                  <h3 className="mb-2 text-base font-semibold text-white">
                     Évaluation par IA
                   </h3>
-                  <p className="text-zinc-400">
+                  <p className="text-sm text-zinc-400 leading-relaxed">
                     Chaque réponse est analysée par un LLM selon 3 critères :
                     clarté, pertinence, structure.
                   </p>
                 </div>
               </div>
 
-              <div className="flex gap-4">
+              <div className="flex gap-5">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-indigo-500/10">
-                  <Globe className="h-6 w-6 text-indigo-500" />
+                  <Globe className="h-5 w-5 text-indigo-400" />
                 </div>
                 <div>
-                  <h3 className="mb-2 text-lg font-semibold text-white">
+                  <h3 className="mb-2 text-base font-semibold text-white">
                     Ancré dans le contexte marocain
                   </h3>
-                  <p className="text-zinc-400">
+                  <p className="text-sm text-zinc-400 leading-relaxed">
                     Questions adaptées aux secteurs et aux entreprises
                     marocaines. Feedback en français et darija.
                   </p>
                 </div>
               </div>
 
-              <div className="flex gap-4">
+              <div className="flex gap-5">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-indigo-500/10">
-                  <Mail className="h-6 w-6 text-indigo-500" />
+                  <Mail className="h-5 w-5 text-indigo-400" />
                 </div>
                 <div>
-                  <h3 className="mb-2 text-lg font-semibold text-white">
+                  <h3 className="mb-2 text-base font-semibold text-white">
                     Bilan envoyé par email
                   </h3>
-                  <p className="text-zinc-400">
+                  <p className="text-sm text-zinc-400 leading-relaxed">
                     Reçois automatiquement un plan personnalisé sur 7 jours dans
                     ta boîte mail.
                   </p>
                 </div>
               </div>
 
-              <div className="flex gap-4">
+              <div className="flex gap-5">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-indigo-500/10">
-                  <Repeat2 className="h-6 w-6 text-indigo-500" />
+                  <Repeat2 className="h-5 w-5 text-indigo-400" />
                 </div>
                 <div>
-                  <h3 className="mb-2 text-lg font-semibold text-white">
+                  <h3 className="mb-2 text-base font-semibold text-white">
                     Entraîne-toi autant que tu veux
                   </h3>
-                  <p className="text-zinc-400">
+                  <p className="text-sm text-zinc-400 leading-relaxed">
                     Recommence la simulation avec un autre secteur à chaque fois.
                   </p>
                 </div>
               </div>
 
-              <div className="flex gap-4">
+              <div className="flex gap-5">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-indigo-500/10">
-                  <ShieldCheck className="h-6 w-6 text-indigo-500" />
+                  <ShieldCheck className="h-5 w-5 text-indigo-400" />
                 </div>
                 <div>
-                  <h3 className="mb-2 text-lg font-semibold text-white">
+                  <h3 className="mb-2 text-base font-semibold text-white">
                     Techniques de prompting avancées
                   </h3>
-                  <p className="text-zinc-400">
+                  <p className="text-sm text-zinc-400 leading-relaxed">
                     Structured Prompting, Few-Shot Learning et Chain-of-Thought
                     pour un feedback de qualité.
                   </p>
                 </div>
               </div>
 
-              <div className="flex gap-4">
+              <div className="flex gap-5">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-indigo-500/10">
-                  <Zap className="h-6 w-6 text-indigo-500" />
+                  <Zap className="h-5 w-5 text-indigo-400" />
                 </div>
                 <div>
-                  <h3 className="mb-2 text-lg font-semibold text-white">
+                  <h3 className="mb-2 text-base font-semibold text-white">
                     Résultat immédiat
                   </h3>
-                  <p className="text-zinc-400">
+                  <p className="text-sm text-zinc-400 leading-relaxed">
                     Pas d&rsquo;attente. Le feedback apparaît en quelques secondes
                     après ta réponse.
                   </p>
@@ -281,20 +276,20 @@ export default function Home() {
         {/* Chatbot Section */}
         <section id="chatbot" className={`${SECTION_PADDING} border-t ${BORDER}`}>
           <div className="mx-auto max-w-6xl px-6 text-center">
-            <p className="mb-4 text-xs font-medium uppercase tracking-widest text-indigo-500">
+            <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-indigo-500">
               ESSAYER
             </p>
-            <h2 className="mb-4 text-4xl font-bold tracking-tight text-white md:text-5xl">
+            <h2 className="mb-4 text-5xl font-bold tracking-tight text-white md:text-6xl leading-tight">
               Lance ta simulation maintenant
             </h2>
-            <p className="mx-auto mb-12 max-w-xl text-lg text-zinc-400">
+            <p className="mx-auto mb-12 max-w-xl text-lg text-zinc-400 leading-relaxed">
               Choisis ton secteur, réponds aux questions, reçois ton bilan.
               Entièrement gratuit.
             </p>
 
             <ChatbotEmbed />
 
-            <p className="mt-6 text-sm text-zinc-500">
+            <p className="mt-8 text-sm text-zinc-500">
               KHDEMTI est un outil d&rsquo;entraînement. Il ne remplace pas un
               accompagnement professionnel.
             </p>
