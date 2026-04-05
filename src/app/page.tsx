@@ -80,17 +80,32 @@ export default function Home() {
         {/* Logos / Social Proof Bar */}
         <section className={`${SECTION_PADDING} border-y ${BORDER}`}>
           <div className="mx-auto max-w-6xl px-6 text-center">
-            <p className="mb-6 text-xs font-medium uppercase tracking-widest text-zinc-500">
+            <p className="mb-8 text-xs font-medium uppercase tracking-widest text-zinc-500">
               Conçu pour les étudiants de
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-6 text-lg text-zinc-400 md:gap-12">
-              <span>FST Mohammedia</span>
-              <span className="hidden md:block">·</span>
-              <span>ENCG</span>
-              <span className="hidden md:block">·</span>
-              <span>ENSA</span>
-              <span className="hidden md:block">·</span>
-              <span>FSJES</span>
+            <div className="grid grid-cols-2 gap-6 md:grid-cols-5">
+              {[
+                { abbr: "FST", name: "Faculté des Sciences et Techniques" },
+                { abbr: "ENSA", name: "École Nationale des Sciences Appliquées" },
+                { abbr: "ENSAM", name: "École Nationale Supérieure d'Arts et Métiers" },
+                { abbr: "ENCG", name: "École Nationale de Commerce et de Gestion" },
+                { abbr: "FSJES", name: "Faculté des Sciences Juridiques, Économiques et Sociales" },
+              ].map((school) => (
+                <div
+                  key={school.abbr}
+                  className="group flex flex-col items-center gap-2"
+                  title={school.name}
+                >
+                  <div className="flex h-14 w-14 items-center justify-center rounded-xl border border-white/8 bg-white/5 transition-colors group-hover:border-indigo-500/30 group-hover:bg-indigo-500/10">
+                    <span className="text-lg font-bold text-zinc-300">
+                      {school.abbr.slice(0, 2)}
+                    </span>
+                  </div>
+                  <span className="text-xs font-medium text-zinc-400">
+                    {school.abbr}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
         </section>
